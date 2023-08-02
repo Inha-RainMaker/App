@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rain_maker/card/postcard.dart';
 import 'package:get/get.dart';
+import 'dart:math';
+import 'package:quiver/iterables.dart';
 class mainscreen extends StatefulWidget {
   const mainscreen({super.key});
 
@@ -10,14 +12,18 @@ class mainscreen extends StatefulWidget {
 
 class _mainscreenState extends State<mainscreen> {
   List<List<int>> groupBox=[[],[],[]];
+  List<int> groupIndex=[0,0,0];
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     for(var i=0;i<100;i++){
+
+
       groupBox[i%3].add(1);
+
     }
-    print(groupBox);
+
   }
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -28,13 +34,18 @@ class _mainscreenState extends State<mainscreen> {
                  child: Column(
                    children:List.generate(groupBox[index].length,
                            (jndex) => Container(height: Get.width*0.33*groupBox[index][jndex],
-                                      color:Colors.red),),
+                           decoration: BoxDecoration(
+                             border: Border.all(color: Colors.white),
+                            ),
+                             child:Image.asset('asset/img/logo.png',fit: BoxFit.fill,) ,
+                           ),
+                           ).toList(),
             
 
             ),
           )
        ).toList(),
-      )
+      ),
     );
         // children: [
         //

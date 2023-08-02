@@ -1,10 +1,12 @@
-import 'dart:js';
+
+import 'package:flutter/cupertino.dart';
 import 'package:rain_maker/LandingPage/LandingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:rain_maker/mainpages/alarmscreen.dart';
 import 'package:rain_maker/mainpages/mainscreen.dart';
 import 'package:rain_maker/mainpages/myscreen.dart';
 import 'package:rain_maker/mainpages/rankscreen.dart';
+import 'package:rain_maker/mainpages/add_post_screen.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -19,24 +21,52 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex=0;
-  List<BottomNavigationBarItem> bottomItems=[
-    BottomNavigationBarItem(icon: Icon(Icons.grid_on_outlined),label:'1번' ),
-    BottomNavigationBarItem(icon: Icon(Icons.local_fire_department_outlined),label: '2번'),
-    BottomNavigationBarItem(icon: Icon(Icons.notifications_active_outlined),label:'3번'),
-    BottomNavigationBarItem(icon: Icon(Icons.person),label:'4번'),
-  ];
-  List pages=[
-    mainscreen(),
-    rankscreen(),
-    alarmsscreen(),
-    myscreen(),
-  ];
+  late PageController pageController;
+
+  void navigationTap(int page){
+    pageController.jumpToPage(page);
+  }
+  @override
+  void initState() {
+    pageController=PageController();
+    // TODO: implement initState
+    super.initState();
+  }
+  @override
+  void dispose() {
+    pageController.dispose();
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+
+
+ void onPageChanged(int page){
+    setState(() {
+      _selectedIndex=page;
+    });
+ }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: renderAppBar(),
-      body: pages[_selectedIndex],
-      bottomNavigationBar: renderBottomNavigation(),
+
+      body: PageView(
+        children: [
+          mainscreen(),
+          rankscreen(),
+          AddPostScreen(),
+          alarmsscreen(),
+          myscreen(),
+        ],
+        physics: NeverScrollableScrollPhysics(),
+        controller: pageController,
+        onPageChanged: onPageChanged,
+      ),
+      bottomNavigationBar: SizedBox(
+          height: 70,
+          child: bottombar()),
     );
   }
 
@@ -46,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
       title: Text('Rain Maker',
         style: TextStyle(
           color: Colors.blue,
-          fontWeight: FontWeight.w700,
+          fontWeight: FontWeight.w100,
         ),
       ),
       leading: IconButton(
@@ -56,30 +86,33 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       actions:[
         IconButton(onPressed: (){},
-            icon: Icon(Icons.attach_money))
+            icon: Icon(Icons.monetization_on_outlined),color: Colors.yellow,)
       ],
       backgroundColor: Colors.white,
     );
   }
 
-  BottomNavigationBar renderBottomNavigation(){
-    return BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.grey.withOpacity(.60),
-    selectedFontSize: 14,
-    unselectedFontSize: 10,
-    currentIndex: _selectedIndex,
-    showSelectedLabels: false,
-    showUnselectedLabels: false,
-    onTap: (int index){
-          setState(() {
-            _selectedIndex=index;
-          });
-    },
-      items:bottomItems,
+ CupertinoTabBar bottombar (){
+    return CupertinoTabBar(
+      items: [
+        BottomNavigationBarItem(icon: Icon(Icons.grid_on_outlined,color: _selectedIndex==0?Colors.black:Colors.grey,),label:'',
+            backgroundColor: Colors.white ),
+        BottomNavigationBarItem(icon: Icon(Icons.local_fire_department_outlined,color: _selectedIndex==1?Colors.black:Colors.grey),label: '',
+            backgroundColor: Colors.white),
+        BottomNavigationBarItem(icon: Icon(Icons.camera_alt_outlined,color: _selectedIndex==2?Colors.black:Colors.grey,),label: '',
+            backgroundColor: Colors.white),
+        BottomNavigationBarItem(icon: Icon(Icons.notifications_active_outlined,color: _selectedIndex==3?Colors.black:Colors.grey,),label:'',
+            backgroundColor: Colors.white),
+        BottomNavigationBarItem(icon: Icon(Icons.person,color: _selectedIndex==4?Colors.black:Colors.grey,),label:'',
+            backgroundColor: Colors.white,
+        ),
+      ],
+      onTap: navigationTap,
+    );
 
-);
+
+
+
+
   }
 }
