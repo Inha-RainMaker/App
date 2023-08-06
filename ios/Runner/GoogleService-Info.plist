@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>607608771831-p34j7d342e2vtc9vi5tkomg1ng7ppi84.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.607608771831-p34j7d342e2vtc9vi5tkomg1ng7ppi84</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCgF5k4PKbdNWP-75V_RHy84pyU-sp_xpc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>607608771831</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.rainMaker</string>
+	<key>PROJECT_ID</key>
+	<string>rain-maker-7e8dd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rain-maker-7e8dd.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:607608771831:ios:86cf3dd1e06ea11a50aff2</string>
+</dict>
+</plist>

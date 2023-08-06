@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-
+import 'package:rain_maker/mainpages/add_post_screen.dart';
+import 'package:rain_maker/screen/up_load_profile.dart';
 class gradescreen extends StatefulWidget {
   const gradescreen({super.key});
 
   @override
   State<gradescreen> createState() => _gradescreenState();
 }
-List<String> items = ['1학년', '2학년','3학년','4학년'];
+List<String> gradelist = ['1학년', '2학년','3학년','4학년'];
 
 class _gradescreenState extends State<gradescreen> {
   @override
@@ -37,38 +38,48 @@ class _gradescreenState extends State<gradescreen> {
 
       ),
 
-      body: Expanded(
-        child: ListView.builder(
-            itemCount: items.length,
-            itemBuilder: (BuildContext context, int index){
-
-
-                return Card(
-                    elevation: 5,
-                    shape:  RoundedRectangleBorder(
-                        borderRadius:
-                        BorderRadius.all(Radius.elliptical(20,20))),
-                    child: ListTile(
-                      title: Text(items[index],textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w900
-                        ),),
-                      //여기서 이제 데이터 에다가 학과를 넘겨야함
-                      // onTap: ()=> Navigator.of(context).push(MaterialPageRoute(
-                      //   builder: (context) => const ,
-                      onTap: (){},
-                      ),
-                      ),
-                    )
-
-                );
+        body: Column(
 
 
 
-            }
-        ),
-      ),
+          children:<Widget> [
+
+            Expanded(
+              child: ListView.builder(
+                  itemCount: gradelist.length,
+                  itemBuilder: (BuildContext context, int index){
+
+
+                      return Card(
+                          elevation: 10,
+                          shape:  RoundedRectangleBorder(
+                              borderRadius:
+                              BorderRadius.all(Radius.elliptical(20,10))),
+                          child: ListTile(
+                            title: Text(gradelist[index],textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w900
+                              ),),
+                            //여기서 이제 데이터 에다가
+
+                            onTap: ()=> Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const upload_profile_pic(),
+                            ),//서버로 학년 넘기기
+                            ),
+                          )
+
+                      );
+                    }
+
+
+
+              ),
+            )
+          ],
+
+
+        )
     );
   }
 }

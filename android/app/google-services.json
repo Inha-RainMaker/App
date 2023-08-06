@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "607608771831",
+    "project_id": "rain-maker-7e8dd",
+    "storage_bucket": "rain-maker-7e8dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607608771831:android:12b5962aa7474bfe50aff2",
+        "android_client_info": {
+          "package_name": "com.example.rain_maker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "607608771831-bhphsh17gpjdlpm6da1a0b6ord6pp0sf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNJSMU6yLNloKI7-Z3D8YP9PGKBIx38-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "607608771831-bhphsh17gpjdlpm6da1a0b6ord6pp0sf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

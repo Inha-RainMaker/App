@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rain_maker/components/deplist.dart';
+import 'package:rain_maker/screen/gradescreen.dart';
 class finddep extends StatefulWidget {
   const finddep({super.key});
 
@@ -83,7 +84,7 @@ class _finddepState extends State<finddep> {
                       ),),
                       //여기서 이제 데이터 에다가 학과를 넘겨야함
                       onTap: ()=> Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const finddep(),
+                      builder: (context) => const gradescreen(),
                     ),
                     ),
                     )
