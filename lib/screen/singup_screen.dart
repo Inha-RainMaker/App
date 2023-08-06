@@ -1,19 +1,25 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
-
-
+import 'package:rain_maker/screen/up_load_profile.dart';
+import 'package:rain_maker/utils/pickImage.dart';
 
 import 'package:flutter/material.dart';
 import 'package:rain_maker/widget/text_field_input.dart';
 import 'package:rain_maker/screen/singup_screen.dart';
 class SingupScreen extends StatefulWidget {
-  const SingupScreen({super.key});
+
+  const SingupScreen({
+
+    super.key});
 
   @override
   State<SingupScreen> createState() => _SingupScreenState();
 }
 
 class _SingupScreenState extends State<SingupScreen> {
-  final TextEditingController _emailController=TextEditingController();
+
+  final TextEditingController _idController=TextEditingController();
   final TextEditingController _passwordController=TextEditingController();
   final TextEditingController _phonenumberController=TextEditingController();
   final TextEditingController _usernameController=TextEditingController();
@@ -21,7 +27,7 @@ class _SingupScreenState extends State<SingupScreen> {
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-    _emailController.dispose();
+    _idController.dispose();
     _passwordController.dispose();
     _usernameController.dispose();
     _phonenumberController.dispose();
@@ -30,6 +36,33 @@ class _SingupScreenState extends State<SingupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      appBar: AppBar(
+          flexibleSpace: new Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+
+                    Colors.cyan,
+                    Colors.blueAccent
+                  ]
+              ),
+            ),
+
+          ),
+
+          title: Text("나를 알아볼 수 있게 프로필 설정하기!"
+            ,textAlign: TextAlign.center,
+            style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w900
+            ),
+          )
+
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
@@ -39,69 +72,73 @@ class _SingupScreenState extends State<SingupScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
 
-                Text(
-                  'rain maker',
-                  style: TextStyle(
-                      fontFamily: 'code',
-                      fontSize: 50,
-                      fontWeight: FontWeight.w200,
-                      foreground: Paint()
-                    ..shader = LinearGradient(
-                        colors: <Color>[
-                          Colors.red,
-                          Colors.cyan,
-                        ]
-                    ).createShader(Rect.fromLTWH(0.0, 0.0, 200, 100),
-                    ),
-                  ),
-                ),
                 const SizedBox(height: 16),
-                Stack(
-                  children: [
-                     const CircleAvatar(
-                      radius: 64,
-                      backgroundImage: AssetImage('asset/img/me.jpg'),
-                    ),
-                    Positioned(
-                        bottom: -10,
-                        left: 80,
-                        child: IconButton(
-                           onPressed: (){},
-                           icon:Icon(Icons.add_a_photo),))
-                  ],
-                  
-                ),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text("User name", style: TextStyle(fontSize: 20),),],),
+                    Text("이름", style: TextStyle(fontSize: 20,
+                      foreground: Paint()
+                        ..shader = LinearGradient(
+                            colors: <Color>[
+                              Colors.lightBlueAccent,
+                              Colors.pinkAccent,
+                              Colors.cyan
+
+                            ]
+                        ).createShader(Rect.fromLTWH(100, 100, 200, 20),
+                        ),
+                    ),),],),
                 const SizedBox(height: 16),
 
                 TextFieldInput(
-                    textEditingController: _emailController ,
-                    hintText: 'Enter your username',
+                    
+                    textEditingController: _usernameController ,
+                    hintText: '실명을 입력해주세요!',
                     textInputType: TextInputType.text) ,
                 const SizedBox(height: 16),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text("ID", style: TextStyle(fontSize: 20),),],),
+                    Text("유저 닉네임", style: TextStyle(fontSize: 20,
+                      foreground: Paint()
+                        ..shader = LinearGradient(
+                            colors: <Color>[
+                              Colors.lightBlueAccent,
+                              Colors.pinkAccent,
+                              Colors.cyan
+
+                            ]
+                        ).createShader(Rect.fromLTWH(100, 100, 200, 20),
+                        ),
+                    ),),],),
                 const SizedBox(height: 16),
 
                 TextFieldInput(
-                    textEditingController: _emailController ,
-                    hintText: 'Enter your email',
+                    textEditingController: _idController ,
+                    hintText: '유저 닉네임을 입력해주세요!',
                     textInputType: TextInputType.emailAddress) ,
                 const SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text("Password", style: TextStyle(fontSize: 20),),],),
+                    Text("비밀번호", style: TextStyle(fontSize: 20,
+                      foreground: Paint()
+                        ..shader = LinearGradient(
+                            colors: <Color>[
+                              Colors.lightBlueAccent,
+                              Colors.pinkAccent,
+                              Colors.cyan
+
+                            ]
+                        ).createShader(Rect.fromLTWH(100, 100, 200, 20),
+                        ),
+                    ),),],),
                 const SizedBox(height: 16),
                 TextFieldInput(
                     textEditingController: _passwordController ,
-                    hintText: 'Enter your password',
+                    hintText: '비밀 번호를 입력해주세요',
                     textInputType: TextInputType.text,
                     isPass: true
                 ),
@@ -110,30 +147,78 @@ class _SingupScreenState extends State<SingupScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text("Phone Number", style: TextStyle(fontSize: 20),),],),
+                    Text("전화번호", style: TextStyle(fontSize: 20,
+                      foreground: Paint()
+                        ..shader = LinearGradient(
+                            colors: <Color>[
+                              Colors.lightBlueAccent,
+                              Colors.pinkAccent,
+                              Colors.cyan
+
+                            ]
+                        ).createShader(Rect.fromLTWH(100, 100, 200, 20),
+                        ),
+                    ),
+
+                    ),],),
                 const SizedBox(height: 16),
                 TextFieldInput(
                     textEditingController: _phonenumberController,
-                    hintText: 'Enter your Phone Number',
+                    hintText: '전화번호를 입력해주세요!',
                     textInputType: TextInputType.text,
 
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 40),
 
 
 
-
-                Container(
-                  child: const Text('Sign In'),
-                  width: double.infinity,
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                  decoration: const ShapeDecoration(shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(4)),
-                  ),
-                      color:Colors.lightBlueAccent
-                  ),
+            GestureDetector(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const SingupScreen(),
                 ),
+                ),
+                child: Container(
+                  height: 60,
+                  width: 350,
+                  decoration: BoxDecoration(
+
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      gradient: LinearGradient(
+                          begin: Alignment.centerLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+
+                            Colors.pinkAccent,
+                            Colors.amberAccent
+
+                          ]
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 2,
+                          offset: Offset(0, 3),
+                        )
+                      ]
+                  ),
+
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child:  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        ' 다음 ',textAlign: TextAlign.center, style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      ),
+                    ],
+                  ),
+                )
+            ),
+
                 const SizedBox(height: 16),
 
 

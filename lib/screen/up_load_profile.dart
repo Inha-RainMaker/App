@@ -3,7 +3,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:rain_maker/utils/pickImage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:typed_data';
-
+import 'package:rain_maker/screen/login_screen.dart';
+import 'package:rain_maker/screen/singup_screen.dart';
 
 class upload_profile_pic extends StatefulWidget {
   const upload_profile_pic({super.key});
@@ -183,10 +184,10 @@ class _upload_profile_picState extends State<upload_profile_pic> {
                 ),
               ],
           ),
-          SizedBox(height: 16,),
+          SizedBox(height: 25,),
           GestureDetector(
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const upload_profile_pic(),
+                builder: (context) => const SingupScreen(),
               ),
               ),
               child: Container(
