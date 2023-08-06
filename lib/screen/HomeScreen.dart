@@ -64,9 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
         controller: pageController,
         onPageChanged: onPageChanged,
       ),
-      bottomNavigationBar: SizedBox(
-          height: 70,
-          child: bottombar()),
+      bottomNavigationBar:bottombar()
     );
   }
 
@@ -94,16 +92,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
  CupertinoTabBar bottombar (){
     return CupertinoTabBar(
+
       items: [
-        BottomNavigationBarItem(icon: Icon(Icons.grid_on_outlined,color: _selectedIndex==0?Colors.black:Colors.grey,),label:'',
+        BottomNavigationBarItem(icon: Icon(Icons.grid_on_outlined,color: _selectedIndex==0?Colors.black:Colors.grey,),
             backgroundColor: Colors.white ),
-        BottomNavigationBarItem(icon: Icon(Icons.local_fire_department_outlined,color: _selectedIndex==1?Colors.black:Colors.grey),label: '',
+        BottomNavigationBarItem(icon: Icon(Icons.local_fire_department_outlined,color: _selectedIndex==1?Colors.black:Colors.grey),
             backgroundColor: Colors.white),
-        BottomNavigationBarItem(icon: Icon(Icons.camera_alt_outlined,color: _selectedIndex==2?Colors.black:Colors.grey,),label: '',
+        BottomNavigationBarItem(icon: Icon(Icons.camera_alt_outlined,color: _selectedIndex==2?Colors.black:Colors.grey,),
             backgroundColor: Colors.white),
-        BottomNavigationBarItem(icon: Icon(Icons.notifications_active_outlined,color: _selectedIndex==3?Colors.black:Colors.grey,),label:'',
+        BottomNavigationBarItem(icon: Icon(Icons.notifications_active_outlined,color: _selectedIndex==3?Colors.black:Colors.grey,),
             backgroundColor: Colors.white),
-        BottomNavigationBarItem(icon: Icon(Icons.person,color: _selectedIndex==4?Colors.black:Colors.grey,),label:'',
+        BottomNavigationBarItem(icon: Icon(Icons.person,color: _selectedIndex==4?Colors.black:Colors.grey,),
             backgroundColor: Colors.white,
         ),
       ],

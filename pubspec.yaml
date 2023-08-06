@@ -83,6 +83,9 @@ flutter:
     - family: code
       fonts:
         - asset: asset/font/Codystar-Light.ttf
+    - family: righteous
+      fonts:
+        - asset: asset/font/Righteous-Regular.ttf
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

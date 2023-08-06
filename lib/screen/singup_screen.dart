@@ -44,7 +44,15 @@ class _SingupScreenState extends State<SingupScreen> {
                   style: TextStyle(
                       fontFamily: 'code',
                       fontSize: 50,
-                      fontWeight: FontWeight.w200
+                      fontWeight: FontWeight.w200,
+                      foreground: Paint()
+                    ..shader = LinearGradient(
+                        colors: <Color>[
+                          Colors.red,
+                          Colors.cyan,
+                        ]
+                    ).createShader(Rect.fromLTWH(0.0, 0.0, 200, 100),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 16),

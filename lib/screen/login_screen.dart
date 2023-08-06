@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:rain_maker/widget/text_field_input.dart';
 import 'package:rain_maker/screen/singup_screen.dart';
@@ -30,6 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
             width: double.infinity,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
 
                 Text(
