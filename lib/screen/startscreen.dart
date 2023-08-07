@@ -10,6 +10,10 @@ class startscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+       appBar: AppBar(
+         elevation: 0,
+         backgroundColor: Colors.white,
+       ),
         body: Container(
 
           child: Column(
