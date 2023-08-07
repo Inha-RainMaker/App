@@ -1,5 +1,5 @@
 import 'dart:typed_data';
-
+import 'package:rain_maker/screen/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:rain_maker/screen/up_load_profile.dart';
 import 'package:rain_maker/utils/pickImage.dart';
@@ -18,7 +18,7 @@ class SingupScreen extends StatefulWidget {
 }
 
 class _SingupScreenState extends State<SingupScreen> {
-
+  int seletedinx=0;
   final TextEditingController _idController=TextEditingController();
   final TextEditingController _passwordController=TextEditingController();
   final TextEditingController _phonenumberController=TextEditingController();
@@ -38,6 +38,7 @@ class _SingupScreenState extends State<SingupScreen> {
     return Scaffold(
 
       appBar: AppBar(
+          centerTitle: true,
           flexibleSpace: new Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -96,12 +97,19 @@ class _SingupScreenState extends State<SingupScreen> {
                     textEditingController: _usernameController ,
                     hintText: '실명을 입력해주세요!',
                     textInputType: TextInputType.text) ,
-                const SizedBox(height: 16),
+                const SizedBox(height: 8),
+                Row(
+                  children: [
 
+                    Text("실명이 아닐시 계정이 제한이 됩니다.", style: TextStyle(fontSize: 15,color: Colors.red))
+                  ],
+
+                ),
+                const SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text("유저 닉네임", style: TextStyle(fontSize: 20,
+                    Text("유저 네임", style: TextStyle(fontSize: 20,
                       foreground: Paint()
                         ..shader = LinearGradient(
                             colors: <Color>[
@@ -117,7 +125,7 @@ class _SingupScreenState extends State<SingupScreen> {
 
                 TextFieldInput(
                     textEditingController: _idController ,
-                    hintText: '유저 닉네임을 입력해주세요!',
+                    hintText: '유저 네임을 입력해주세요!',
                     textInputType: TextInputType.emailAddress) ,
                 const SizedBox(height: 16),
                 Row(
@@ -164,17 +172,122 @@ class _SingupScreenState extends State<SingupScreen> {
                 const SizedBox(height: 16),
                 TextFieldInput(
                     textEditingController: _phonenumberController,
-                    hintText: '전화번호를 입력해주세요!',
+                    hintText: '전화번호를 입력해주세요!(숫자만 입력)',
                     textInputType: TextInputType.text,
 
                 ),
                 const SizedBox(height: 40),
+                Row(
+                  children: [
+                    GestureDetector(
+                        onTap: () => setState(() {
+                          seletedinx=1;
+                        }),
+                        child: Container(
+                          height: 60,
+                          width: 150,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: seletedinx==1?Colors.white:Colors.blue),
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                              gradient: LinearGradient(
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.bottomRight,
+                                  colors:  seletedinx==1?[
+                                    Colors.lightBlueAccent,
+                                    Colors.cyan,
 
 
+                                  ]:[
+                                    Colors.white,
+                                    Colors.white
+
+                                  ]
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 2,
+                                  blurRadius: 2,
+                                  offset: Offset(0, 3),
+                                )
+                              ]
+                          ),
+
+                          padding: const EdgeInsets.symmetric(vertical: 8),
+                          child:  Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                ' 남성 ',textAlign: TextAlign.center, style: TextStyle(
+                                fontSize: 18,
+                                color: seletedinx==1? Colors.white:Colors.blue,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              ),
+                            ],
+                          ),
+                        )
+                    ),
+                      SizedBox(width:  45,),
+
+                    GestureDetector(
+                        onTap: () => setState(() {
+                          seletedinx=2;
+                        }),
+
+                        child: Container(
+                          height: 60,
+                          width: 150 ,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: seletedinx==2?Colors.white:Colors.pinkAccent),
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                              gradient: LinearGradient(
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.bottomRight,
+                                  colors:  seletedinx==2?[
+
+                                    Colors.pinkAccent,
+                                    Colors.red
+
+                                  ]:[
+                                    Colors.white,
+                                    Colors.white
+
+                                  ]
+
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 2,
+                                  blurRadius: 2,
+                                  offset: Offset(0, 3),
+                                )
+                              ]
+                          ),
+
+                          padding: const EdgeInsets.symmetric(vertical: 8),
+                          child:  Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                ' 여성 ',textAlign: TextAlign.center, style: TextStyle(
+                                fontSize: 18,
+                                color:seletedinx==2? Colors.white:Colors.pinkAccent,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              ),
+                            ],
+                          ),
+                        )
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 40),
 
             GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const SingupScreen(),
+                  builder: (context) => const HomeScreen(),
                 ),
                 ),
                 child: Container(

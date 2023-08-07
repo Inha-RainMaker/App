@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rain_maker/widget/text_field_input.dart';
 import 'package:rain_maker/screen/singup_screen.dart';
+import 'package:rain_maker/screen/HomeScreen.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -11,6 +12,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController=TextEditingController();
   final TextEditingController _passwordController=TextEditingController();
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -22,6 +24,30 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      appBar: AppBar(
+        elevation: 0,
+        centerTitle: true,
+        iconTheme: IconThemeData(
+          color: Colors.blueAccent
+        ),
+        backgroundColor:Colors.white ,
+          flexibleSpace: new Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+
+          )),
+
+          title: Text("로그인"
+            ,textAlign: TextAlign.center,
+            style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w900
+            ),
+          )
+
+      ),
+
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
@@ -33,80 +59,123 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
 
                 Text(
-                  'rain maker',
-                    style: TextStyle(
-                        fontFamily: 'code',
-                        fontSize: 80
-                        ,
-                        fontWeight: FontWeight.w200
-                    ),
+                  'RAIN MAKER',textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'righteous',
+                    fontSize: 70,
+                    fontWeight: FontWeight.w200,
+
+                    foreground: Paint()
+                      ..shader = LinearGradient(
+                          colors: <Color>[
+                            Colors.lightBlueAccent,
+                            Colors.pinkAccent,
+                            Colors.cyan
+
+                          ]
+                      ).createShader(Rect.fromLTWH(100, 100, 200, 20),
+                      ),
+                  ),
                 ),
                 const SizedBox(height: 64),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text("ID", style: TextStyle(fontSize: 20),),],),
+                      Text("유저 네임", style: TextStyle(fontSize: 20,
+                          foreground: Paint()
+                            ..shader = LinearGradient(
+                                colors: <Color>[
+                                  Colors.lightBlueAccent,
+                                  Colors.pinkAccent,
+                                  Colors.cyan
+
+                                ]
+                            ).createShader(Rect.fromLTWH(100, 100, 200, 20),)
+                      ),),],),
                 const SizedBox(height: 16),
 
                   TextFieldInput(
                       textEditingController: _emailController ,
-                      hintText: 'Enter your email',
+                      hintText: '유저네임을 입력하세요',
                       textInputType: TextInputType.emailAddress) ,
                 const SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text("Password", style: TextStyle(fontSize: 20),),],),
+                    Text("비밀번호", style: TextStyle(fontSize: 20,
+                      foreground: Paint()
+                        ..shader = LinearGradient(
+                            colors: <Color>[
+                              Colors.lightBlueAccent,
+                              Colors.pinkAccent,
+                              Colors.cyan
+
+                            ]
+                        ).createShader(Rect.fromLTWH(100, 100, 200, 20),)
+                    ),
+                    ),],),
 
                 const SizedBox(height: 16),
 
                   TextFieldInput(
                       textEditingController: _passwordController ,
-                      hintText: 'Enter your password',
+                      hintText: '비밀번호를 입력하세요',
                       textInputType: TextInputType.text,
                       isPass: true,
 
                   ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 32),
 
 
+                GestureDetector(
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const HomeScreen(),
+                    ),
+                    ),
+                    child: Container(
+                      height: 60,
+                      width: 350,
+                      decoration: BoxDecoration(
 
-                Container(
-                  child: const Text('Log In'),
-                  width: double.infinity,
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                  decoration: const ShapeDecoration(shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(4)),
-                  ),
-                  color:Colors.lightBlueAccent
-                  ),
-                ),
-                const SizedBox(height: 16),
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        child: const Text('계정이 없으신가요? '),
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 8
-                        ),
-                      ),
-                      GestureDetector(
-                        child: Container(
-                          child: const Text('Sing Up', style: TextStyle(
-                              fontWeight:FontWeight.bold),),
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 8
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          gradient: LinearGradient(
+                              begin: Alignment.centerLeft,
+                              end: Alignment.bottomRight,
+                              colors: [
+
+                                Colors.pinkAccent,
+                                Colors.amberAccent
+
+                              ]
                           ),
-                        ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 2,
+                              blurRadius: 2,
+                              offset: Offset(0, 3),
+                            )
+                          ]
                       ),
 
-                    ],
-                  ),
+                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      child:  Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            ' 다음 ',textAlign: TextAlign.center, style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          ),
+                        ],
+                      ),
+                    )
+                ),
 
-                )
+                const SizedBox(height: 16),
+             
 
               ],
 

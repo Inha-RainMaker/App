@@ -19,7 +19,7 @@ class startscreen extends StatelessWidget {
             children: [
               SizedBox(height: 100,),
               Text(
-                'INHA RAIN MAKER',textAlign: TextAlign.center,
+                'RAIN MAKER',textAlign: TextAlign.center,
                 style: TextStyle(
                     fontFamily: 'righteous',
                     fontSize: 70,
