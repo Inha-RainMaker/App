@@ -7,6 +7,7 @@ import 'package:rain_maker/mainpages/mainscreen.dart';
 import 'package:rain_maker/mainpages/myscreen.dart';
 import 'package:rain_maker/mainpages/rankscreen.dart';
 import 'package:rain_maker/mainpages/add_post_screen.dart';
+import 'package:rain_maker/mainpages/mainpage.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -54,9 +55,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
       body: PageView(
         children: [
-          mainscreen(),
+          mainpage(),
           rankscreen(),
-          AddPostScreen(),
+
           alarmsscreen(),
           myscreen(),
         ],
@@ -98,8 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
             backgroundColor: Colors.white ),
         BottomNavigationBarItem(icon: Icon(Icons.local_fire_department_outlined,color: _selectedIndex==1?Colors.black:Colors.grey),
             backgroundColor: Colors.white),
-        BottomNavigationBarItem(icon: Icon(Icons.camera_alt_outlined,color: _selectedIndex==2?Colors.black:Colors.grey,),
-            backgroundColor: Colors.white),
+
         BottomNavigationBarItem(icon: Icon(Icons.notifications_active_outlined,color: _selectedIndex==3?Colors.black:Colors.grey,),
             backgroundColor: Colors.white),
         BottomNavigationBarItem(icon: Icon(Icons.person,color: _selectedIndex==4?Colors.black:Colors.grey,),

@@ -15,7 +15,8 @@ class startscreen extends StatelessWidget {
          backgroundColor: Colors.white,
        ),
         body: Container(
-
+          width: double.infinity,
+          height: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,

@@ -10,6 +10,7 @@ class alarmsscreen extends StatefulWidget {
 
 Widget _activeitemOne() {
   return Container(
+
     decoration: BoxDecoration(
 
         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -176,6 +177,7 @@ Widget _newRecentlyActiveView() {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 15),
     child: Column(
+
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
 
@@ -192,19 +194,31 @@ class _alarmsscreenState extends State<alarmsscreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.white,
       child: Scaffold(
         appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () {},
+            automaticallyImplyLeading: false,
+            elevation: 0,
+            backgroundColor: Colors.white,
+            title: Text("WHO RAIN YOU"
+              ,textAlign: TextAlign.center,
+              style: TextStyle(
+                  foreground: Paint()
+                    ..shader = LinearGradient(
+                        colors: <Color>[
+                          Colors.lightBlueAccent,
+                          Colors.pinkAccent,
+                          Colors.cyan
 
-          ),
-          title: const Text(
-            'Who Rain You',
-            style: TextStyle(color: Colors.black),
-          ),
+                        ]
+                    ).createShader(Rect.fromLTWH(100, 100, 200, 20),),
+                  fontFamily: 'righteous',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w900
+              ),
+            ),
+
+
           centerTitle: false,
           actions: [
             IconButton(
@@ -215,6 +229,7 @@ class _alarmsscreenState extends State<alarmsscreen> {
           ],
         ),
         body: SingleChildScrollView(
+
           physics: BouncingScrollPhysics(),
           child: Column(
             children: [

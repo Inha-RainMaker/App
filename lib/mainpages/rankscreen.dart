@@ -11,17 +11,27 @@ class _rankscreenState extends State<rankscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          elevation: 0,
-          centerTitle: false,
-          title: Text('RAIN RANK',style: TextStyle(color: Colors.black),),
-          backgroundColor: Colors.white,
+            automaticallyImplyLeading: false,
+            elevation: 0,
+            backgroundColor: Colors.white,
+            title: Text("RAIN RANKER"
+              ,textAlign: TextAlign.center,
+              style: TextStyle(
+                  foreground: Paint()
+                    ..shader = LinearGradient(
+                        colors: <Color>[
+                          Colors.lightBlueAccent,
+                          Colors.pinkAccent,
+                          Colors.cyan
 
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () {},
-
-          ),
-        )
+                        ]
+                    ).createShader(Rect.fromLTWH(100, 100, 200, 20),),
+                  fontFamily: 'righteous',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w900
+              ),
+            )
+        ),
     );
 
   }
