@@ -85,6 +85,8 @@ class _myscreenState extends State<myscreen> {
         centerTitle: false,
       ),
       body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         color: Colors.white,
         child:
       Padding(padding: const EdgeInsets.all(16),
@@ -162,21 +164,25 @@ class _myscreenState extends State<myscreen> {
                   ),),
                 ],
               ),
-              SizedBox(width: 32,),
-              GestureDetector(
-                  onTap: () => _selectImage(context),
 
+            ],
+          )
+          ,SizedBox(height: 16,)
+          ,Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+
+             GestureDetector(
+                  onTap: () => _selectImage(context),
                   child: Container(
                     height: 40,
-                    width: 100,
+                    width: 180,
                     decoration: BoxDecoration(
-
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         gradient: LinearGradient(
                             begin: Alignment.centerLeft,
                             end: Alignment.bottomRight,
                             colors: [
-
                               Colors.cyan,
                               Colors.blueAccent
                             ]
@@ -187,10 +193,10 @@ class _myscreenState extends State<myscreen> {
                             spreadRadius: 2,
                             blurRadius: 2,
                             offset: Offset(0, 3),
+
                           )
                         ]
                     ),
-
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     child:  Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -202,25 +208,147 @@ class _myscreenState extends State<myscreen> {
                           fontWeight: FontWeight.bold,
                         ),
                         ),
-                        
-                        
                       ],
-
-                      
-                      
                     ),
                   )
               ),
-              SizedBox(width: 32,),
+              SizedBox(width: 16,),
+              GestureDetector(
+                  onTap: () => _selectImage(context),
+                  child: Container(
+                    height: 40,
+                    width: 180,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        gradient: LinearGradient(
+                            begin: Alignment.centerLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Colors.blueAccent,
+                              Colors.cyan,
 
+                            ]
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 2,
+                            offset: Offset(0, 3),
 
+                          )
+                        ]
+                    ),
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child:  Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          '프로필 편집',textAlign: TextAlign.center, style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        ),
+                      ],
+                    ),
+                  )
+              ),
+           ],
+        ),
+          Container(height: 16,),
+          Row(
+            children: [Text("내가 받은 칭찬 TOP 3",style: TextStyle(
+              fontWeight: FontWeight.w900,
+              fontSize: 15,
+              color: Colors.grey
+            ),)],
+          ),
+          SizedBox(height: 32,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text("1.",style: TextStyle(color: Colors.yellow,fontSize: 30,
+              fontWeight: FontWeight.w600
+              ),),
+              Container(
 
+                decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.yellow
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(10)
+                    ),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 2,
+                        offset: Offset(0, 3),
+                      )
+                    ]
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("가장 웃음이 많을 것 같은사람",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
 
+                    fontSize: 25,
+                    fontWeight: FontWeight.w600,
+
+                    foreground: Paint()
+                      ..shader = LinearGradient(
+                          colors: <Color>[
+                            Colors.yellow.shade600,
+                            Colors.orangeAccent.shade400,
+                          ]
+                      ).createShader(Rect.fromLTWH(200, 100, 200, 20),
+                      ),
+                  ),),
+                ),
+              ),
             ],
-          )
+          ),
+          SizedBox(height: 48,),
+          Text("2. 가장 웃음이 많을 것 같은사람", style: TextStyle(
+
+            fontSize: 25,
+            fontWeight: FontWeight.w600,
+
+            foreground: Paint()
+              ..shader = LinearGradient(
+                  colors: <Color>[
+                    Colors.grey.shade600,
+                    Colors.grey.shade400,
+                  ]
+              ).createShader(Rect.fromLTWH(200, 100, 200, 20),
+              ),
+          ),),
+          SizedBox(height: 48,),
+          Text("3. 가장 웃음이 많을 것 같은사람", style: TextStyle(
+
+            fontSize: 25,
+            fontWeight: FontWeight.w600,
+
+            foreground: Paint()
+              ..shader = LinearGradient(
+                  colors: <Color>[
+                    Colors.brown.shade600,
+                    Colors.brown.shade300
+                  ]
+              ).createShader(Rect.fromLTWH(200, 100, 200, 20),
+              ),
+          ),),
+          SizedBox(height: 16,),
 
 
         ],
+
+
+
+
       ),
     ),
 
@@ -249,8 +377,8 @@ class _myscreenState extends State<myscreen> {
             ),
           ),
         ),
-
       ],
+
     ) ;
   }
 }

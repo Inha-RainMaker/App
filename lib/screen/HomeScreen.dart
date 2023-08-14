@@ -100,9 +100,9 @@ class _HomeScreenState extends State<HomeScreen> {
         BottomNavigationBarItem(icon: Icon(Icons.local_fire_department_outlined,color: _selectedIndex==1?Colors.black:Colors.grey),
             backgroundColor: Colors.white),
 
-        BottomNavigationBarItem(icon: Icon(Icons.notifications_active_outlined,color: _selectedIndex==3?Colors.black:Colors.grey,),
+        BottomNavigationBarItem(icon: Icon(Icons.notifications_active_outlined,color: _selectedIndex==2?Colors.black:Colors.grey,),
             backgroundColor: Colors.white),
-        BottomNavigationBarItem(icon: Icon(Icons.person,color: _selectedIndex==4?Colors.black:Colors.grey,),
+        BottomNavigationBarItem(icon: Icon(Icons.person,color: _selectedIndex==3?Colors.black:Colors.grey,),
             backgroundColor: Colors.white,
         ),
       ],
