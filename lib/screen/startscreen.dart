@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rain_maker/screen/FindDepscreen.dart';
 import 'package:rain_maker/screen/login_screen.dart';
 import 'package:rain_maker/screen/singup_screen.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class startscreen extends StatelessWidget {
   const startscreen({super.key});
@@ -9,11 +10,16 @@ class startscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: Colors.white,
        appBar: AppBar(
          elevation: 0,
          backgroundColor: Colors.white,
        ),
+
+
+
+
         body: Container(
           width: double.infinity,
           height: double.infinity,
@@ -23,24 +29,19 @@ class startscreen extends StatelessWidget {
 
             children: [
               SizedBox(height: 100,),
-              Text(
+              GradientText(
                 'RAIN MAKER',textAlign: TextAlign.center,
                 style: TextStyle(
                     fontFamily: 'righteous',
                     fontSize: 70,
                     fontWeight: FontWeight.w200,
 
-                    foreground: Paint()
-                  ..shader = LinearGradient(
-                      colors: <Color>[
-                        Colors.lightBlueAccent,
-                        Colors.pinkAccent,
-                        Colors.cyan
 
-                      ]
-                  ).createShader(Rect.fromLTWH(100, 100, 200, 20),
-                  ),
                 ),
+                colors: [
+                  Colors.blueAccent,
+                  Colors.cyan
+                ]
               ),
               SizedBox(height: 100,),
 

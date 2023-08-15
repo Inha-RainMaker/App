@@ -200,22 +200,16 @@ class _alarmsscreenState extends State<alarmsscreen> {
             automaticallyImplyLeading: false,
             elevation: 0,
             backgroundColor: Colors.white,
-            title: Text("WHO RAIN YOU"
+            title: GradientText("WHO RAIN YOU"
               ,textAlign: TextAlign.center,
               style: TextStyle(
-                  foreground: Paint()
-                    ..shader = LinearGradient(
-                        colors: <Color>[
-                          Colors.lightBlueAccent,
-                          Colors.pinkAccent,
-                          Colors.cyan
-
-                        ]
-                    ).createShader(Rect.fromLTWH(100, 100, 200, 20),),
                   fontFamily: 'righteous',
-                  fontSize: 20,
-                  fontWeight: FontWeight.w900
+                  fontWeight: FontWeight.w800
               ),
+              colors: [
+                Colors.blueAccent,
+                Colors.cyanAccent
+              ],
             ),
 
 
@@ -228,17 +222,22 @@ class _alarmsscreenState extends State<alarmsscreen> {
             )
           ],
         ),
-        body: SingleChildScrollView(
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          color: Colors.white,
+          child: SingleChildScrollView(
 
-          physics: BouncingScrollPhysics(),
-          child: Column(
-            children: [
+            physics: BouncingScrollPhysics(),
+            child: Column(
+              children: [
 
-              _newRecentlyActiveView(),
-              _newRecentlyActiveView(),
-              _newRecentlyActiveView(),
-              _newRecentlyActiveView(),
-            ],
+                _newRecentlyActiveView(),
+                _newRecentlyActiveView(),
+                _newRecentlyActiveView(),
+                _newRecentlyActiveView(),
+              ],
+            ),
           ),
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 class rankscreen extends StatefulWidget {
   const rankscreen({super.key});
 
@@ -14,25 +15,20 @@ class _rankscreenState extends State<rankscreen> {
             automaticallyImplyLeading: false,
             elevation: 0,
             backgroundColor: Colors.white,
-            title: Text("RAIN RANKER"
+            title: GradientText("RAIN RANKER"
               ,textAlign: TextAlign.center,
               style: TextStyle(
-                  foreground: Paint()
-                    ..shader = LinearGradient(
-                        colors: <Color>[
-                          Colors.lightBlueAccent,
-                          Colors.pinkAccent,
-                          Colors.cyan
-
-                        ]
-                    ).createShader(Rect.fromLTWH(100, 100, 200, 20),),
                   fontFamily: 'righteous',
-                  fontSize: 20,
-                  fontWeight: FontWeight.w900
+                  fontWeight: FontWeight.w800
               ),
+              colors: [
+                Colors.blueAccent,
+                Colors.cyanAccent
+              ],
+            ),
+            centerTitle: false,
             )
-        ),
-    );
+        );
 
   }
 }

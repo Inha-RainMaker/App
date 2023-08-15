@@ -83,7 +83,7 @@ class _upload_profile_picState extends State<upload_profile_pic> {
 
           ),
 
-          title: Text("나를 알아볼 수 있게 프로필 설정하기!"
+          title: Text("나를 알아볼 수 있게 프로필 사진 설정하기!"
               ,textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 20,

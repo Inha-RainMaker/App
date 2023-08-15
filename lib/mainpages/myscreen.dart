@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:rain_maker/utils/pickImage.dart';
 import 'dart:typed_data';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class myscreen extends StatefulWidget {
   const myscreen({super.key});
@@ -64,24 +65,21 @@ class _myscreenState extends State<myscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
         automaticallyImplyLeading: false,
         elevation: 0,
         backgroundColor: Colors.white,
-        title: Text('PROFILE',style: TextStyle(
-          foreground: Paint()
-            ..shader = LinearGradient(
-                colors: <Color>[
-                  Colors.cyan,
-                  Colors.lightBlueAccent,
-
-
-                ]
-            ).createShader(Rect.fromLTWH(100, 100, 200, 20),),
-          fontFamily: 'righteous',
-
-
-
-        ),),
+        title: GradientText("PROFILE"
+          ,textAlign: TextAlign.center,
+          style: TextStyle(
+              fontFamily: 'righteous',
+              fontWeight: FontWeight.w800
+          ),
+          colors: [
+            Colors.blueAccent,
+            Colors.cyanAccent
+          ],
+        ),
         centerTitle: false,
       ),
       body: Container(
@@ -128,21 +126,15 @@ class _myscreenState extends State<myscreen> {
                 children: [
 
                   //유저 이름
-                  Text("김수민",textAlign:TextAlign.start,
+                  GradientText("김수민",textAlign:TextAlign.start,
 
                     style: TextStyle(
-                        foreground: Paint()
-                          ..shader = LinearGradient(
-                              colors: <Color>[
-                                Colors.lightBlueAccent,
-
-                                Colors.cyan
-
-                              ]
-                          ).createShader(Rect.fromLTWH(100, 100, 200, 20),
-
-                          ),fontSize:  25
+                          fontSize:  25
                     ),
+                    colors: [
+                      Colors.blueAccent,
+                      Colors.cyanAccent
+                    ],
                   ),
                   //유저 네임
                   Text("@gomsuman",style: TextStyle(
@@ -183,8 +175,8 @@ class _myscreenState extends State<myscreen> {
                             begin: Alignment.centerLeft,
                             end: Alignment.bottomRight,
                             colors: [
-                              Colors.cyan,
-                              Colors.blueAccent
+                              Colors.blueAccent,
+                              Colors.cyanAccent
                             ]
                         ),
                         boxShadow: [
@@ -224,8 +216,9 @@ class _myscreenState extends State<myscreen> {
                             begin: Alignment.centerLeft,
                             end: Alignment.bottomRight,
                             colors: [
+                              Colors.cyanAccent,
                               Colors.blueAccent,
-                              Colors.cyan,
+
 
                             ]
                         ),
@@ -259,88 +252,163 @@ class _myscreenState extends State<myscreen> {
           Container(height: 16,),
           Row(
             children: [Text("내가 받은 칭찬 TOP 3",style: TextStyle(
-              fontWeight: FontWeight.w900,
-              fontSize: 15,
-              color: Colors.grey
+                fontWeight: FontWeight.w900,
+                fontSize: 15,
+                color: Colors.grey
             ),)],
           ),
-          SizedBox(height: 32,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text("1.",style: TextStyle(color: Colors.yellow,fontSize: 30,
-              fontWeight: FontWeight.w600
-              ),),
-              Container(
+      SizedBox(height: 32,),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width-60,
+            height: 50,
+            decoration: BoxDecoration(
+                border: Border.all(
+                    color: Colors.grey
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(40)
+                ),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 2,
+                    offset: Offset(0, 3),
+                  )
+                ]
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(width: 10,),
+                  Text("1",style: TextStyle(color: Colors.yellow,fontSize: 25,
+                    fontWeight: FontWeight.w600,
+                  ),),
+                  SizedBox(width: 10,),
+                  Text("가장 웃음이 많을 것 같은사람",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600,
+                        color:Colors.grey
 
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+          SizedBox(height: 24,),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width-60,
+                height: 50,
                 decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.yellow
+                        color: Colors.white70,
+                      width: 0
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(10)
+                    borderRadius: BorderRadius.all(Radius.circular(40)
+
                     ),
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 2,
-                        offset: Offset(0, 3),
+                        color: Colors.grey.withOpacity(0.3),
+                        spreadRadius: 3,
+                        blurRadius: 3,
+                        offset: Offset(0, 5),
                       )
                     ]
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("가장 웃음이 많을 것 같은사람",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(width: 10,),
+                      Text("2",style: TextStyle(color: Colors.blueGrey.shade400,fontSize: 25,
+                        fontWeight: FontWeight.w600,
+                      ),),
+                      SizedBox(width: 10,),
+                      Text("가장 웃음이 많을 것 같은사람",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600,
+                            color:Colors.grey
 
-                    fontSize: 25,
-                    fontWeight: FontWeight.w600,
-
-                    foreground: Paint()
-                      ..shader = LinearGradient(
-                          colors: <Color>[
-                            Colors.yellow.shade600,
-                            Colors.orangeAccent.shade400,
-                          ]
-                      ).createShader(Rect.fromLTWH(200, 100, 200, 20),
+                        ),
                       ),
-                  ),),
+                    ],
+                  ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 48,),
-          Text("2. 가장 웃음이 많을 것 같은사람", style: TextStyle(
+          SizedBox(height: 24,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width-60,
+                height: 50,
+                decoration: BoxDecoration(
+                    border: Border.all(
+                        color: Colors.white70,
+                        width: 0
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(40)
 
-            fontSize: 25,
-            fontWeight: FontWeight.w600,
+                    ),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        spreadRadius: 3,
+                        blurRadius: 3,
+                        offset: Offset(0, 5),
+                      )
+                    ]
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(width: 10,),
+                      Text("3",style: TextStyle(color: Colors.brown.shade400,fontSize: 25,
+                        fontWeight: FontWeight.w600,
+                      ),),
+                      SizedBox(width: 10,),
+                      Text("가장 웃음이 많을 것 같은사람",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600,
+                            color:Colors.grey
 
-            foreground: Paint()
-              ..shader = LinearGradient(
-                  colors: <Color>[
-                    Colors.grey.shade600,
-                    Colors.grey.shade400,
-                  ]
-              ).createShader(Rect.fromLTWH(200, 100, 200, 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-          ),),
-          SizedBox(height: 48,),
-          Text("3. 가장 웃음이 많을 것 같은사람", style: TextStyle(
-
-            fontSize: 25,
-            fontWeight: FontWeight.w600,
-
-            foreground: Paint()
-              ..shader = LinearGradient(
-                  colors: <Color>[
-                    Colors.brown.shade600,
-                    Colors.brown.shade300
-                  ]
-              ).createShader(Rect.fromLTWH(200, 100, 200, 20),
-              ),
-          ),),
+            ],
+          ),
           SizedBox(height: 16,),
 
 

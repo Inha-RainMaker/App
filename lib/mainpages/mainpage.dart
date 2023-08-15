@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:rain_maker/mainpages/gamescreen.dart';
+import 'dart:ui' as ui;
 
 
 class mainpage extends StatefulWidget {
@@ -10,6 +12,8 @@ class mainpage extends StatefulWidget {
 }
 
 class _mainpageState extends State<mainpage> {
+  final Shader linearGradientShader = ui.Gradient.linear(
+      Offset(0, 0), Offset(150, 20), [Colors.cyanAccent, Colors.lightBlue]);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,23 +21,18 @@ class _mainpageState extends State<mainpage> {
         automaticallyImplyLeading: false,
         elevation: 0,
         backgroundColor: Colors.white,
-          title: Text("RAIN MAKER"
+          title: GradientText("RAIN MAKER"
             ,textAlign: TextAlign.center,
              style: TextStyle(
-            foreground: Paint()
-             ..shader = LinearGradient(
-              colors: <Color>[
-            Colors.lightBlueAccent,
-            Colors.pinkAccent,
-            Colors.cyan
-
-            ]
-            ).createShader(Rect.fromLTWH(100, 100, 200, 20),),
-                fontFamily: 'righteous',
-                fontSize: 20,
-                fontWeight: FontWeight.w900
+                 fontFamily: 'righteous',
+               fontWeight: FontWeight.w800
             ),
-          )
+            colors: [
+              Colors.blueAccent,
+              Colors.cyanAccent
+            ],
+          ),
+          centerTitle: false,
       ),
       body:Container(
         color: Colors.white,
@@ -53,23 +52,20 @@ class _mainpageState extends State<mainpage> {
               ),
             ),
             SizedBox(height: 10),
-            Text(
+
+            GradientText(
               'RAIN MAKER',textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'righteous',
-                fontSize: 40,
-                fontWeight: FontWeight.w200,
+                fontSize: 45,
+                fontWeight: FontWeight.w800,
 
-                foreground: Paint()
-                  ..shader = LinearGradient(
-                      colors: <Color>[
-                        Colors.lightBlueAccent,
-                        Colors.pinkAccent,
-                        Colors.cyan
-                      ]
-                  ).createShader(Rect.fromLTWH(100, 100, 200, 20),
-                  ),
+
               ),
+              colors: [
+                Colors.blueAccent,
+                Colors.cyanAccent
+              ],
             ),
             SizedBox(height: 100,),
 
@@ -80,7 +76,7 @@ class _mainpageState extends State<mainpage> {
 
             GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => mainpage(),
+                  builder: (context) =>gamescreen(),
                 ),
                 ),
                 child: Container(
@@ -90,8 +86,8 @@ class _mainpageState extends State<mainpage> {
 
                       borderRadius: BorderRadius.all(Radius.circular(50)),
                       gradient: LinearGradient(
-                          begin: Alignment.centerLeft,
-                          end: Alignment.bottomRight,
+                          begin: Alignment.topLeft,
+                          end: Alignment(0.8, 1),
                           colors: [
                             Colors.cyanAccent,
                             Colors.blue

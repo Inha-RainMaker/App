@@ -61,7 +61,8 @@ class _HomeScreenState extends State<HomeScreen> {
           alarmsscreen(),
           myscreen(),
         ],
-        physics: NeverScrollableScrollPhysics(),
+
+        scrollDirection: Axis.horizontal,
         controller: pageController,
         onPageChanged: onPageChanged,
       ),
@@ -93,16 +94,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
  CupertinoTabBar bottombar (){
     return CupertinoTabBar(
-
+      backgroundColor: Colors.white,
       items: [
-        BottomNavigationBarItem(icon: Icon(Icons.grid_on_outlined,color: _selectedIndex==0?Colors.black:Colors.grey,),
+        BottomNavigationBarItem(icon: Icon(Icons.grid_on_outlined,color: _selectedIndex==0?Colors.cyan:Colors.grey,),
             backgroundColor: Colors.white ),
-        BottomNavigationBarItem(icon: Icon(Icons.local_fire_department_outlined,color: _selectedIndex==1?Colors.black:Colors.grey),
+        BottomNavigationBarItem(icon: Icon(Icons.local_fire_department_outlined,color: _selectedIndex==1?Colors.cyan:Colors.grey),
             backgroundColor: Colors.white),
 
-        BottomNavigationBarItem(icon: Icon(Icons.notifications_active_outlined,color: _selectedIndex==2?Colors.black:Colors.grey,),
+        BottomNavigationBarItem(icon: Icon(Icons.notifications_active_outlined,color: _selectedIndex==2?Colors.cyan:Colors.grey,),
             backgroundColor: Colors.white),
-        BottomNavigationBarItem(icon: Icon(Icons.person,color: _selectedIndex==3?Colors.black:Colors.grey,),
+        BottomNavigationBarItem(icon: Icon(Icons.person,color: _selectedIndex==3?Colors.cyan:Colors.grey,),
             backgroundColor: Colors.white,
         ),
       ],

@@ -55,7 +55,7 @@ class _SingupScreenState extends State<SingupScreen> {
 
           ),
 
-          title: Text("나를 알아볼 수 있게 프로필 설정하기!"
+          title: Text("프로필 설정하기!"
             ,textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 20,

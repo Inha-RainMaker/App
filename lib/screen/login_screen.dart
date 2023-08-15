@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rain_maker/widget/text_field_input.dart';
 import 'package:rain_maker/screen/singup_screen.dart';
 import 'package:rain_maker/screen/HomeScreen.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -58,24 +59,18 @@ class _LoginScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
 
-                Text(
+                GradientText(
                   'RAIN MAKER',textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'righteous',
                     fontSize: 70,
                     fontWeight: FontWeight.w200,
 
-                    foreground: Paint()
-                      ..shader = LinearGradient(
-                          colors: <Color>[
-                            Colors.lightBlueAccent,
-                            Colors.pinkAccent,
-                            Colors.cyan
-
-                          ]
-                      ).createShader(Rect.fromLTWH(100, 100, 200, 20),
-                      ),
                   ),
+                  colors: [
+                    Colors.blueAccent,
+                    Colors.cyanAccent
+                  ],
                 ),
                 const SizedBox(height: 64),
                   Row(
