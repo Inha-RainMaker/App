@@ -57,7 +57,6 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           mainpage(),
           rankscreen(),
-
           alarmsscreen(),
           myscreen(),
         ],
