@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rain_maker/components/gamepage2.dart';
-import 'package:rain_maker/screen/gradescreen.dart';
+import 'package:rain_maker/components/gamepeople_info.dart';
+
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:rain_maker/screen/HomeScreen.dart';
 
@@ -17,8 +18,8 @@ class gamescreen extends StatefulWidget {
 
 
 class _gamescreenState extends State<gamescreen> {
-  final PageController pageController=PageController(
 
+  final PageController pageController=PageController(
     initialPage: 0,
   );
   int pageindex=1;
@@ -30,14 +31,13 @@ class _gamescreenState extends State<gamescreen> {
     super.dispose();
   }
 
-  Widget people_info(){
+  Widget people_info(int a){
 
-      bool isclick=false;
-
+      Color boxcolor=Colors.white;
     return InkWell(
         onTap: ()=>setState(() {
-          isclick=!isclick;
 
+          boxcolor=Colors.black;
         }),
         child: Container(
           height: 150,
@@ -46,14 +46,9 @@ class _gamescreenState extends State<gamescreen> {
               gradient: LinearGradient(
                   begin: Alignment.centerLeft,
                   end: Alignment.bottomRight,
-                  colors:  isclick==true?[
-                    Colors.pinkAccent,
-                    Colors.red
-
-                  ]:[
-                    Colors.white,
-                    Colors.white
-
+                  colors: [
+                   boxcolor,
+                   boxcolor,
                   ]
 
               ),
@@ -87,7 +82,7 @@ class _gamescreenState extends State<gamescreen> {
                 children: [
                   Text("컴퓨터 공학과",style: TextStyle(
                       color: Colors.black
-                  ),),Text("4학년",style: TextStyle(
+                  ),),Text("$a학년",style: TextStyle(
                       color: Colors.black
                   ),),
                 ],
@@ -122,73 +117,32 @@ class _gamescreenState extends State<gamescreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(10),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(2),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(3),
+                  people_info(3)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(3),
+                  people_info(4)
                 ],
               ),
-              SizedBox(height: 15,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  TextButton(onPressed: (){}, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Icon(Icons.autorenew,color: Colors.blueAccent,),
-                      SizedBox(width: 10,),
-                      GradientText("  셔플",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.blueAccent,Colors.cyanAccent],
-                      )
-                    ],
-                  )),
 
-                  TextButton(onPressed: (){
-                    pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.easeInOut);
-                    setState(() {
-                        pageindex=2;
-                    });
-                  }, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GradientText("건너뛰기",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.cyanAccent,Colors.blueAccent,],
-                      ), SizedBox(width: 10,),
-                      Icon(Icons.navigate_next,color: Colors.blueAccent,),
-                    ],
-                  ))
-                  ,
-                ],
-              ),
 
 
             ],
@@ -223,29 +177,29 @@ class _gamescreenState extends State<gamescreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(1),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(3),
+                  people_info(4)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(1),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(3),
+                  people_info(4)
                 ],
               ),
               SizedBox(height: 15,),
@@ -324,29 +278,29 @@ Widget gamepage3(){
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(5),
+                  people_info(3)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(1),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(2),
+                  people_info(3)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(3),
+                  people_info(2)
                 ],
               ),
               SizedBox(height: 15,),
@@ -423,29 +377,29 @@ Widget gamepage4(){
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(2),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(3),
+                  people_info(3)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(3),
+                  people_info(3)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(2),
+                  people_info(3)
                 ],
               ),
               SizedBox(height: 15,),
@@ -524,29 +478,29 @@ Widget gamepage5(){
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(2),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(2),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(3),
+                  people_info(3)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(3),
+                  people_info(2)
                 ],
               ),
               SizedBox(height: 15,),
@@ -624,29 +578,29 @@ Widget gamepage6(){
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(1),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(3),
+                  people_info(4)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(2),
+                  people_info(1)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(2),
+                  people_info(1)
                 ],
               ),
               SizedBox(height: 15,),
@@ -724,29 +678,29 @@ Widget gamepage7(){
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(2),
+                  people_info(1)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(3),
+                  people_info(4)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(2),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(1),
+                  people_info(2)
                 ],
               ),
               SizedBox(height: 15,),
@@ -824,29 +778,29 @@ Widget gamepage8(){
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(2),
+                  people_info(3)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(1),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(3),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(1),
+                  people_info(2)
                 ],
               ),
               SizedBox(height: 15,),
@@ -924,29 +878,29 @@ Widget gamepage9(){
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(3),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(2),
+                  people_info(3)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(3),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(32),
+                  people_info(2)
                 ],
               ),
               SizedBox(height: 15,),
@@ -1024,29 +978,29 @@ Widget gamepage10(){
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(2),
+                  people_info(3)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(1),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(3),
+                  people_info(2)
                 ],
               ),SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(),
-                  people_info()
+                  people_info(2),
+                  people_info(3)
                 ],
               ),
               SizedBox(height: 15,),
@@ -1106,6 +1060,9 @@ Widget gamepage10(){
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading :BackButton(
+          color: Colors.blueAccent,
+        ),
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.white,
@@ -1113,23 +1070,27 @@ Widget gamepage10(){
           color: Colors.cyan
         ),),
       ),
-      body: PageView(
-        physics: NeverScrollableScrollPhysics(),
-        scrollDirection:Axis.horizontal,
-        controller: pageController,
-        children: [
-          gamepage1(),
-          gamepage2(),
-          gamepage3(),
-          gamepage4(),
-          gamepage5(),
-          gamepage6(),
-          gamepage7(),
-          gamepage8(),
-          gamepage9(),
-          gamepage10(),
+      body:
+          PageView(
+            physics: NeverScrollableScrollPhysics(),
+            scrollDirection:Axis.horizontal,
+            controller: pageController,
+            children: [
+              gamepage1(),
+              gamepage2(),
+              gamepage3(),
+              gamepage4(),
+              gamepage5(),
+              gamepage6(),
+              gamepage7(),
+              gamepage8(),
+              gamepage9(),
+              gamepage10(),
         ],
+
       ),
+
+
 
 
 

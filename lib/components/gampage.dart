@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rain_maker/components/gamepeople_info.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:rain_maker/mainpages/gamescreen.dart';
 class gamepage1 extends StatefulWidget {
   const gamepage1({super.key});
 
@@ -78,7 +79,8 @@ class _gamepage1State extends State<gamepage1> {
                       ],
                     )),
 
-                    TextButton(onPressed: (){}, child:  Row(
+                    TextButton(onPressed: (){
+                    }, child:  Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         GradientText("건너뛰기",
