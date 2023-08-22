@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rain_maker/components/gamepage2.dart';
-import 'package:rain_maker/components/gamepeople_info.dart';
-
+import 'package:rain_maker/gamepages/gamepage1.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:rain_maker/screen/HomeScreen.dart';
 
@@ -32,12 +30,10 @@ class _gamescreenState extends State<gamescreen> {
   }
 
   Widget people_info(int a){
-
-      Color boxcolor=Colors.white;
+      bool click=false;
     return InkWell(
         onTap: ()=>setState(() {
-
-          boxcolor=Colors.black;
+          click=true;
         }),
         child: Container(
           height: 150,
@@ -46,11 +42,13 @@ class _gamescreenState extends State<gamescreen> {
               gradient: LinearGradient(
                   begin: Alignment.centerLeft,
                   end: Alignment.bottomRight,
-                  colors: [
-                   boxcolor,
-                   boxcolor,
+                  colors: click==false?[
+                   Colors.white70,
+                   Colors.white70
+                  ]:[
+                    Colors.black,
+                    Colors.black,
                   ]
-
               ),
               borderRadius: BorderRadius.all(Radius.circular(10)),
               border: Border.all(
@@ -95,64 +93,6 @@ class _gamescreenState extends State<gamescreen> {
   }
 
 
-  Widget gamepage1(){
-    return Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
-        child:Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              GradientText("학점이 높을 것 같은 사람은?",style: TextStyle(
-                  fontSize: 20
-              )
-                ,colors: [
-                  Colors.cyanAccent,
-                  Colors.blueAccent
-                ],
-              ),
-              SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(10),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(2),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(3),
-                  people_info(3)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(3),
-                  people_info(4)
-                ],
-              ),
-
-
-
-            ],
-          ),
-        )
-
-
-    );
-
-  }
 
 
   Widget gamepage2(){
@@ -203,48 +143,6 @@ class _gamescreenState extends State<gamescreen> {
                 ],
               ),
               SizedBox(height: 15,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  TextButton(onPressed: (){}, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Icon(Icons.autorenew,color: Colors.blueAccent,),
-                      SizedBox(width: 10,),
-                      GradientText("  셔플",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.blueAccent,Colors.cyanAccent],
-                      )
-                    ],
-                  )
-                  ),
-
-                  TextButton(onPressed:(){
-                    pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.easeInOut);
-                    setState(() {
-                      pageindex=3;
-                    });
-                  }, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GradientText("건너뛰기",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.cyanAccent,Colors.blueAccent,],
-                      ), SizedBox(width: 10,),
-                      Icon(Icons.navigate_next,color: Colors.blueAccent,),
-                    ],
-                  ))
-                  ,
-                ],
-              ),
 
 
             ],
@@ -304,47 +202,6 @@ Widget gamepage3(){
                 ],
               ),
               SizedBox(height: 15,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  TextButton(onPressed: (){}, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Icon(Icons.autorenew,color: Colors.blueAccent,),
-                      SizedBox(width: 10,),
-                      GradientText("  셔플",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.blueAccent,Colors.cyanAccent],
-                      )
-                    ],
-                  )
-                  ),
-                  TextButton(onPressed: (){
-                    pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.easeInOut);
-                              setState(() {
-                              pageindex=4;
-                              });
-                              }, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GradientText("건너뛰기",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.cyanAccent,Colors.blueAccent,],
-                      ), SizedBox(width: 10,),
-                      Icon(Icons.navigate_next,color: Colors.blueAccent,),
-                    ],
-                  ))
-                  ,
-                ],
-              ),
 
 
             ],
@@ -403,48 +260,6 @@ Widget gamepage4(){
                 ],
               ),
               SizedBox(height: 15,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  TextButton(onPressed: (){}, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Icon(Icons.autorenew,color: Colors.blueAccent,),
-                      SizedBox(width: 10,),
-                      GradientText("  셔플",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.blueAccent,Colors.cyanAccent],
-                      )
-                    ],
-                  )
-                  ),
-
-                  TextButton(onPressed: (){
-                    pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.easeInOut);
-                    setState(() {
-                      pageindex=5;
-                    });
-                  }, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GradientText("건너뛰기",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.cyanAccent,Colors.blueAccent,],
-                      ), SizedBox(width: 10,),
-                      Icon(Icons.navigate_next,color: Colors.blueAccent,),
-                    ],
-                  ))
-                  ,
-                ],
-              ),
 
 
             ],
@@ -504,48 +319,6 @@ Widget gamepage5(){
                 ],
               ),
               SizedBox(height: 15,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  TextButton(onPressed:(){}, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Icon(Icons.autorenew,color: Colors.blueAccent,),
-                      SizedBox(width: 10,),
-                      GradientText("  셔플",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.blueAccent,Colors.cyanAccent],
-                      )
-                    ],
-                  )
-                  ),
-
-                  TextButton(onPressed: (){
-                    pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.easeInOut);
-                    setState(() {
-                      pageindex=6;
-                    });
-                  }, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GradientText("건너뛰기",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.cyanAccent,Colors.blueAccent,],
-                      ), SizedBox(width: 10,),
-                      Icon(Icons.navigate_next,color: Colors.blueAccent,),
-                    ],
-                  ))
-                  ,
-                ],
-              ),
 
 
             ],
@@ -604,48 +377,7 @@ Widget gamepage6(){
                 ],
               ),
               SizedBox(height: 15,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  TextButton(onPressed: (){}, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Icon(Icons.autorenew,color: Colors.blueAccent,),
-                      SizedBox(width: 10,),
-                      GradientText("  셔플",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.blueAccent,Colors.cyanAccent],
-                      )
-                    ],
-                  )
-                  ),
 
-                  TextButton(onPressed: (){
-                    pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.easeInOut);
-                    setState(() {
-                      pageindex=7;
-                    });
-                  }, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GradientText("건너뛰기",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.cyanAccent,Colors.blueAccent,],
-                      ), SizedBox(width: 10,),
-                      Icon(Icons.navigate_next,color: Colors.blueAccent,),
-                    ],
-                  ))
-                  ,
-                ],
-              ),
 
 
             ],
@@ -704,49 +436,6 @@ Widget gamepage7(){
                 ],
               ),
               SizedBox(height: 15,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  TextButton(onPressed: (){}, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Icon(Icons.autorenew,color: Colors.blueAccent,),
-                      SizedBox(width: 10,),
-                      GradientText("  셔플",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.blueAccent,Colors.cyanAccent],
-                      )
-                    ],
-                  )
-                  ),
-
-                  TextButton(onPressed: (){
-                    pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.easeInOut);
-                    setState(() {
-                      pageindex=8;
-                    });
-                  }, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GradientText("건너뛰기",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.cyanAccent,Colors.blueAccent,],
-                      ), SizedBox(width: 10,),
-                      Icon(Icons.navigate_next,color: Colors.blueAccent,),
-                    ],
-                  ))
-                  ,
-                ],
-              ),
-
 
             ],
           ),
@@ -804,49 +493,6 @@ Widget gamepage8(){
                 ],
               ),
               SizedBox(height: 15,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  TextButton(onPressed: (){}, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Icon(Icons.autorenew,color: Colors.blueAccent,),
-                      SizedBox(width: 10,),
-                      GradientText("  셔플",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.blueAccent,Colors.cyanAccent],
-                      )
-                    ],
-                  )
-                  ),
-
-                  TextButton(onPressed:(){
-                    pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.easeInOut);
-                    setState(() {
-                      pageindex=9;
-                    });
-                  }, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GradientText("건너뛰기",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.cyanAccent,Colors.blueAccent,],
-                      ), SizedBox(width: 10,),
-                      Icon(Icons.navigate_next,color: Colors.blueAccent,),
-                    ],
-                  ))
-                  ,
-                ],
-              ),
-
 
             ],
           ),
@@ -904,48 +550,6 @@ Widget gamepage9(){
                 ],
               ),
               SizedBox(height: 15,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  TextButton(onPressed: (){}, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Icon(Icons.autorenew,color: Colors.blueAccent,),
-                      SizedBox(width: 10,),
-                      GradientText("  셔플",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.blueAccent,Colors.cyanAccent],
-                      )
-                    ],
-                  )
-                  ),
-
-                  TextButton(onPressed: (){
-                    pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.easeInOut);
-                    setState(() {
-                      pageindex=10;
-                    });
-                  }, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GradientText("건너뛰기",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.cyanAccent,Colors.blueAccent,],
-                      ), SizedBox(width: 10,),
-                      Icon(Icons.navigate_next,color: Colors.blueAccent,),
-                    ],
-                  ))
-                  ,
-                ],
-              ),
 
 
             ],
@@ -1004,46 +608,6 @@ Widget gamepage10(){
                 ],
               ),
               SizedBox(height: 15,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  TextButton(onPressed: (){}, child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Icon(Icons.autorenew,color: Colors.blueAccent,),
-                      SizedBox(width: 10,),
-                      GradientText("  셔플",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.blueAccent,Colors.cyanAccent],
-                      )
-                    ],
-                  )
-                  ),
-
-                  TextButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const HomeScreen(),
-                  ),
-                  ), child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GradientText("끝내기",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        colors: [Colors.cyanAccent,Colors.blueAccent,],
-                      ), SizedBox(width: 10,),
-                      Icon(Icons.navigate_next,color: Colors.blueAccent,),
-                    ],
-                  ))
-                  ,
-                ],
-              ),
 
 
             ],
@@ -1071,24 +635,77 @@ Widget gamepage10(){
         ),),
       ),
       body:
-          PageView(
-            physics: NeverScrollableScrollPhysics(),
-            scrollDirection:Axis.horizontal,
-            controller: pageController,
+          Column(
             children: [
-              gamepage1(),
-              gamepage2(),
-              gamepage3(),
-              gamepage4(),
-              gamepage5(),
-              gamepage6(),
-              gamepage7(),
-              gamepage8(),
-              gamepage9(),
-              gamepage10(),
+              Expanded(
+                child: PageView(
+                  physics: NeverScrollableScrollPhysics(),
+                  scrollDirection:Axis.horizontal,
+                  controller: pageController,
+                  children: [
+                    gamepage1(),
+                    gamepage2(),
+                    gamepage3(),
+                    gamepage4(),
+                    gamepage5(),
+                    gamepage6(),
+                    gamepage7(),
+                    gamepage8(),
+                    gamepage9(),
+                    gamepage10(),
         ],
 
       ),
+              ),
+              Container(
+                height: 100,
+                color: Colors.white,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextButton(onPressed: (){}, child:  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(Icons.autorenew,color: Colors.blueAccent,),
+                        SizedBox(width: 10,),
+                        GradientText("  셔플",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w900,
+                          ),
+                          colors: [Colors.blueAccent,Colors.cyanAccent],
+                        )
+                      ],
+                    )
+                    ),
+
+                    TextButton(onPressed:(){
+                      pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.easeInOut);
+                      setState(() {
+                        pageindex=pageindex+1;
+                      });
+                    }, child:  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        GradientText("건너뛰기",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w900,
+                          ),
+                          colors: [Colors.cyanAccent,Colors.blueAccent,],
+                        ), SizedBox(width: 10,),
+                        Icon(Icons.navigate_next,color: Colors.blueAccent,),
+                      ],
+                    ))
+                    ,
+                  ],
+                ),
+              ),
+            ],
+          ),
 
 
 

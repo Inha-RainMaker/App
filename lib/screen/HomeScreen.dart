@@ -1,6 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
-import 'package:rain_maker/LandingPage/LandingPage.dart';
+
 import 'package:flutter/material.dart';
 import 'package:rain_maker/mainpages/alarmscreen.dart';
 import 'package:rain_maker/mainpages/mainscreen.dart';
