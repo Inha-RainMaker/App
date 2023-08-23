@@ -266,7 +266,9 @@ class _myscreenState extends State<myscreen> {
             height: 50,
             decoration: BoxDecoration(
                 border: Border.all(
-                    color: Colors.grey
+                    color: Colors.white70
+                    ,width: 0
+
                 ),
                 borderRadius: BorderRadius.all(Radius.circular(40)
                 ),

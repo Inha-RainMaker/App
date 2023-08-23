@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:rain_maker/gamepages/gamepage1.dart';
+import 'package:rain_maker/gamepages/gamepage2.dart';
+import 'package:rain_maker/gamepages/gamepage3.dart';
+import 'package:rain_maker/gamepages/gamepage4.dart';
+import 'package:rain_maker/gamepages/gamepage5.dart';
+import 'package:rain_maker/gamepages/gamepage6.dart';
+import 'package:rain_maker/gamepages/gamepage7.dart';
+import 'package:rain_maker/gamepages/gamepage8.dart';
+import 'package:rain_maker/gamepages/gamepage9.dart';
+import 'package:rain_maker/gamepages/gamepage10.dart';
+
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:rain_maker/screen/HomeScreen.dart';
 
@@ -22,602 +32,25 @@ class _gamescreenState extends State<gamescreen> {
   );
   int pageindex=1;
 
+
   @override
   void dispose() {
     pageController.dispose();
     // TODO: implement dispose
     super.dispose();
   }
+  void changenext() {
+    //components의 버튼에 함수를 넘겨 main에서 state를 변경
+    pageindex==10?Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) => const HomeScreen(),
+    ),
+    ):pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.easeInOut);
+    setState(() {
+      pageindex=pageindex+1;
 
-  Widget people_info(int a){
-      bool click=false;
-    return InkWell(
-        onTap: ()=>setState(() {
-          click=true;
-        }),
-        child: Container(
-          height: 150,
-          width: 150,
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.bottomRight,
-                  colors: click==false?[
-                   Colors.white70,
-                   Colors.white70
-                  ]:[
-                    Colors.black,
-                    Colors.black,
-                  ]
-              ),
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-              border: Border.all(
-                  width: 1,
-                  color: Colors.cyanAccent
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 2,
-                  blurRadius: 2,
-                  offset: Offset(0, 5),
-
-                )
-              ]
-
-          ),
-          padding: const EdgeInsets.symmetric(vertical: 2),
-          child:  Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              CircleAvatar(
-                backgroundImage: AssetImage('asset/img/me.jpg'),
-                radius: 50,
-              ),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text("컴퓨터 공학과",style: TextStyle(
-                      color: Colors.black
-                  ),),Text("$a학년",style: TextStyle(
-                      color: Colors.black
-                  ),),
-                ],
-              ),
-              Text("ENTJ",style: TextStyle(color: Colors.black),)
-            ],
-          ),
-        )
-    );
+    });
   }
 
-
-
-
-  Widget gamepage2(){
-    return Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
-        child:Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              GradientText("gamepage2",style: TextStyle(
-                  fontSize: 20
-              )
-                ,colors: [
-                  Colors.cyanAccent,
-                  Colors.blueAccent
-                ],
-              ),
-              SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(1),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(3),
-                  people_info(4)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(1),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(3),
-                  people_info(4)
-                ],
-              ),
-              SizedBox(height: 15,),
-
-
-            ],
-          ),
-        )
-
-
-    );
-
-  }
-
-Widget gamepage3(){
-    return Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
-        child:Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              GradientText("gamepage3",style: TextStyle(
-                  fontSize: 20
-              )
-                ,colors: [
-                  Colors.cyanAccent,
-                  Colors.blueAccent
-                ],
-              ),
-              SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(5),
-                  people_info(3)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(1),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(2),
-                  people_info(3)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(3),
-                  people_info(2)
-                ],
-              ),
-              SizedBox(height: 15,),
-
-
-            ],
-          ),
-        )
-
-
-    );
-
-  }
-Widget gamepage4(){
-    return Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
-        child:Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              GradientText("gamepage4",style: TextStyle(
-                  fontSize: 20
-              )
-                ,colors: [
-                  Colors.cyanAccent,
-                  Colors.blueAccent
-                ],
-              ),
-              SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(2),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(3),
-                  people_info(3)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(3),
-                  people_info(3)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(2),
-                  people_info(3)
-                ],
-              ),
-              SizedBox(height: 15,),
-
-
-            ],
-          ),
-        )
-
-
-    );
-
-  }
-Widget gamepage5(){
-
-    return Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
-        child:Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              GradientText("gamepage5",style: TextStyle(
-                  fontSize: 20
-              )
-                ,colors: [
-                  Colors.cyanAccent,
-                  Colors.blueAccent
-                ],
-              ),
-              SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(2),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(2),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(3),
-                  people_info(3)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(3),
-                  people_info(2)
-                ],
-              ),
-              SizedBox(height: 15,),
-
-
-            ],
-          ),
-        )
-
-
-    );
-
-  }
-Widget gamepage6(){
-    return Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
-        child:Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              GradientText("gamepage6",style: TextStyle(
-                  fontSize: 20
-              )
-                ,colors: [
-                  Colors.cyanAccent,
-                  Colors.blueAccent
-                ],
-              ),
-              SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(1),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(3),
-                  people_info(4)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(2),
-                  people_info(1)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(2),
-                  people_info(1)
-                ],
-              ),
-              SizedBox(height: 15,),
-
-
-
-            ],
-          ),
-        )
-
-
-    );
-
-  }
-Widget gamepage7(){
-    return Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
-        child:Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              GradientText("gamepage7",style: TextStyle(
-                  fontSize: 20
-              )
-                ,colors: [
-                  Colors.cyanAccent,
-                  Colors.blueAccent
-                ],
-              ),
-              SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(2),
-                  people_info(1)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(3),
-                  people_info(4)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(2),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(1),
-                  people_info(2)
-                ],
-              ),
-              SizedBox(height: 15,),
-
-            ],
-          ),
-        )
-
-
-    );
-
-  }
-Widget gamepage8(){
-    return Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
-        child:Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              GradientText("gamepage8",style: TextStyle(
-                  fontSize: 20
-              )
-                ,colors: [
-                  Colors.cyanAccent,
-                  Colors.blueAccent
-                ],
-              ),
-              SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(2),
-                  people_info(3)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(1),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(3),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(1),
-                  people_info(2)
-                ],
-              ),
-              SizedBox(height: 15,),
-
-            ],
-          ),
-        )
-
-
-    );
-
-  }
-Widget gamepage9(){
-    return Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
-        child:Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              GradientText("gamepage9",style: TextStyle(
-                  fontSize: 20
-              )
-                ,colors: [
-                  Colors.cyanAccent,
-                  Colors.blueAccent
-                ],
-              ),
-              SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(3),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(2),
-                  people_info(3)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(3),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(32),
-                  people_info(2)
-                ],
-              ),
-              SizedBox(height: 15,),
-
-
-            ],
-          ),
-        )
-
-
-    );
-
-  }
-Widget gamepage10(){
-    return Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
-        child:Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              GradientText("gamepage10",style: TextStyle(
-                  fontSize: 20
-              )
-                ,colors: [
-                  Colors.cyanAccent,
-                  Colors.blueAccent
-                ],
-              ),
-              SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(2),
-                  people_info(3)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(1),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(3),
-                  people_info(2)
-                ],
-              ),SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  people_info(2),
-                  people_info(3)
-                ],
-              ),
-              SizedBox(height: 15,),
-
-
-            ],
-          ),
-        )
-
-
-    );
-
-  }
 
 
   @override
@@ -637,28 +70,28 @@ Widget gamepage10(){
       body:
           Column(
             children: [
-              Expanded(
+              Flexible(
                 child: PageView(
                   physics: NeverScrollableScrollPhysics(),
                   scrollDirection:Axis.horizontal,
                   controller: pageController,
                   children: [
-                    gamepage1(),
-                    gamepage2(),
-                    gamepage3(),
-                    gamepage4(),
-                    gamepage5(),
-                    gamepage6(),
-                    gamepage7(),
-                    gamepage8(),
-                    gamepage9(),
-                    gamepage10(),
+                    gamepage1(Q: "학점이 가장 높은사람은?",changenext: changenext,),
+                    gamepage2(Q: "술자리에서 가장 재밌을것 같은사람은?",changenext: changenext,),
+                    gamepage3(Q: "신입생때 가장 친구가 많을 것 같은 사람은?",changenext: changenext,),
+                    gamepage4(Q: "이런 질문이 떨어짐",changenext: changenext,),
+                    gamepage5(Q: "인스타 셀럽일것 같은 친구는?",changenext: changenext,),
+                    gamepage6(Q: "어디서든 기죽지 않을것 같은 친구는?",changenext: changenext,),
+                    gamepage7(Q: "혼자서도 매우 잘 살것같은 친구는?",changenext: changenext,),
+                    gamepage8(Q: "몰라이제",changenext: changenext,),
+                    gamepage9(Q: "ㅋㅋㅋ",changenext: changenext,),
+                    gamepage10(Q: "빈지노 화이팅",changenext: changenext,),
         ],
 
       ),
               ),
               Container(
-                height: 100,
+                height: 80,
                 color: Colors.white,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -682,14 +115,18 @@ Widget gamepage10(){
                     ),
 
                     TextButton(onPressed:(){
-                      pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.easeInOut);
+                      pageindex==10?Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const HomeScreen(),
+                      ),
+                      ):pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.easeInOut);
                       setState(() {
                         pageindex=pageindex+1;
+
                       });
                     }, child:  Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        GradientText("건너뛰기",
+                        GradientText(pageindex==10?'끝내기':'건너뛰기',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
@@ -697,12 +134,13 @@ Widget gamepage10(){
                           ),
                           colors: [Colors.cyanAccent,Colors.blueAccent,],
                         ), SizedBox(width: 10,),
-                        Icon(Icons.navigate_next,color: Colors.blueAccent,),
+                        Icon(pageindex==10?Icons.close:Icons.navigate_next,color: Colors.blueAccent,),
                       ],
-                    ))
+                    )
+                    )
                     ,
                   ],
-                ),
+                )
               ),
             ],
           ),

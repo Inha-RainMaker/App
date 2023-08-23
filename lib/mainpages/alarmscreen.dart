@@ -227,7 +227,6 @@ class _alarmsscreenState extends State<alarmsscreen> {
           height: double.infinity,
           color: Colors.white,
           child: SingleChildScrollView(
-
             physics: BouncingScrollPhysics(),
             child: Column(
               children: [

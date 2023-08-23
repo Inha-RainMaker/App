@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:rain_maker/components/gamepeople_info.dart';
-class gamepage1 extends StatefulWidget {
+
+class gamepage10 extends StatefulWidget {
   final String Q;
   final Function changenext;
-  const gamepage1({
+  const gamepage10({
     required this.Q,
     required this.changenext,
     super.key});
+
   @override
-  State<gamepage1> createState() => _gamepage1State();
+  State<gamepage10> createState() => _gamepage10State();
 }
 
-class _gamepage1State extends State<gamepage1> {
- int selectednum=0;
- void changecolor(int num) {
-   //components의 버튼에 함수를 넘겨 main에서 state를 변경
-   setState(() {
-     selectednum = num;
-   });
- }
+class _gamepage10State extends State<gamepage10> {
+  int selectednum=0;
+  void changecolor(int num) {
+    //components의 버튼에 함수를 넘겨 main에서 state를 변경
+    setState(() {
+      selectednum = num;
+    });
+  }
 
 
   @override
@@ -45,7 +47,7 @@ class _gamepage1State extends State<gamepage1> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  people_info(productnum: 1, selectednum: selectednum, dep: '컴퓨터 공학과', mdti: 'entj', grade: 2, changecolor: changecolor,changenext: widget.changenext,),
+                  people_info(productnum: 1, selectednum: selectednum, dep: '컴퓨터 공학과', mdti: 'entj', grade: 2, changecolor: changecolor,changenext: widget.changenext),
                   people_info(productnum: 2, selectednum: selectednum, dep: '내거친생각과', mdti: 'estp', grade: 4, changecolor: changecolor,changenext: widget.changenext),
                 ],
               ),SizedBox(height: 16,),
