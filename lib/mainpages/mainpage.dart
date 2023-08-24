@@ -43,7 +43,7 @@ class _mainpageState extends State<mainpage> {
           crossAxisAlignment: CrossAxisAlignment.center,
 
           children: [
-
+            SizedBox(height: 30,),
             Text("WELCOME TO",
               style: TextStyle(
                 fontSize: 20,
@@ -67,10 +67,10 @@ class _mainpageState extends State<mainpage> {
                 Colors.cyanAccent
               ],
             ),
-            SizedBox(height: 100,),
+            SizedBox(height: 50,),
+            Image(image:  AssetImage('asset/img/main.png'),),
 
-
-            SizedBox(height: 48,),
+            SizedBox(height: 20,),
 
 
 
@@ -109,6 +109,7 @@ class _mainpageState extends State<mainpage> {
                   child:  Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+
                       Text(
                         ' START',
                         textAlign: TextAlign.center, style: TextStyle(
