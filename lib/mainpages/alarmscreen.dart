@@ -8,7 +8,7 @@ class alarmsscreen extends StatefulWidget {
   State<alarmsscreen> createState() => _alarmsscreenState();
 }
 
-Widget _activeitemOne() {
+Widget _activeitemOne(String a) {
   return Container(
 
     decoration: BoxDecoration(
@@ -39,7 +39,7 @@ Widget _activeitemOne() {
     ),
     Expanded(
       child: Text.rich(
-          TextSpan(text: '컴xx xx과 xxx',
+          TextSpan(text: a,
             style: TextStyle(
               fontWeight: FontWeight.bold,
               foreground: Paint()
@@ -90,7 +90,7 @@ Widget _activeitemOne() {
   ),);
 }
 
-Widget _activeitemTwo() {
+Widget _activeitemTwo(String a) {
   return Container(
     decoration: BoxDecoration(
 
@@ -120,7 +120,7 @@ Widget _activeitemTwo() {
           ),
           Expanded(
             child: Text.rich(
-                TextSpan(text: '국xx xx과 xxx',
+                TextSpan(text: a,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     foreground: Paint()
@@ -154,18 +154,6 @@ Widget _activeitemTwo() {
 
             ),
           ),
-         Container(
-           width: 10,
-           height: 60,
-           child:
-           Align(
-             alignment: Alignment.topRight,
-             child: CircleAvatar(
-               backgroundColor: Colors.deepOrangeAccent,
-               radius: 5,
-             ),
-           ),
-         ),
 
 
         ],
@@ -173,24 +161,10 @@ Widget _activeitemTwo() {
     ),);
 }
 
-Widget _newRecentlyActiveView() {
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 15),
-    child: Column(
-
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-
-        SizedBox(height: 15,),
-        _activeitemOne(),
-        SizedBox(height: 15,),
-        _activeitemTwo(),
-      ],
-    ),
-  );
-}
 
 class _alarmsscreenState extends State<alarmsscreen> {
+  List<String> gaslist=['가장 무뭐뭫 한 사람','웃을때 가장 멋있는사람', '학교도서관에 살것 같은 사람'];
+  late List<String> reversgaslist=gaslist.reversed.toList();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -222,23 +196,18 @@ class _alarmsscreenState extends State<alarmsscreen> {
             )
           ],
         ),
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          color: Colors.white,
-          child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            child: Column(
-              children: [
+        body: ListView.builder(
+            itemCount: reversgaslist.length,
+            itemBuilder:(context,index){
+              return
+                    _activeitemTwo(reversgaslist[index]);
 
-                _newRecentlyActiveView(),
-                _newRecentlyActiveView(),
-                _newRecentlyActiveView(),
-                _newRecentlyActiveView(),
-              ],
-            ),
-          ),
-        ),
+
+
+
+           }
+
+        )
       ),
     );
   }

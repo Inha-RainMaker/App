@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rain_maker/mainpages/add_post_screen.dart';
 import 'package:rain_maker/screen/up_load_profile.dart';
+import 'package:rain_maker/screen/sel_mbti.dart';
 class gradescreen extends StatefulWidget {
   const gradescreen({super.key});
 
@@ -112,7 +113,7 @@ class _gradescreenState extends State<gradescreen> {
             ,
             GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const  upload_profile_pic(),
+                  builder: (context) => const  sel_mbti(),
                 ),
                 ),
                 child: Container(
