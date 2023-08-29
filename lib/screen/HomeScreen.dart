@@ -65,7 +65,8 @@ class _HomeScreenState extends State<HomeScreen> {
         controller: pageController,
         onPageChanged: onPageChanged,
       ),
-      bottomNavigationBar:bottombar()
+      bottomNavigationBar:bottombar(),
+
     );
   }
 
@@ -93,6 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
  CupertinoTabBar bottombar (){
     return CupertinoTabBar(
+
       backgroundColor: Colors.white,
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.grid_on_outlined,color: _selectedIndex==0?Colors.cyan:Colors.grey,),

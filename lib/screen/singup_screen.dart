@@ -172,7 +172,7 @@ class _SingupScreenState extends State<SingupScreen> {
                 const SizedBox(height: 16),
                 TextFieldInput(
                     textEditingController: _phonenumberController,
-                    hintText: '전화번호를 입력해주세요!(숫자만 입력)',
+                    hintText: '전화번호를 입력해주세요! (010-****-****)',//전화번호폼 
                     textInputType: TextInputType.text,
 
                 ),

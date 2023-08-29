@@ -200,14 +200,18 @@ class _alarmsscreenState extends State<alarmsscreen> {
             itemCount: reversgaslist.length,
             itemBuilder:(context,index){
               return
-                    _activeitemTwo(reversgaslist[index]);
-
-
+                    Card(
+                      elevation: 5,
+                        shape:  RoundedRectangleBorder(  borderRadius:
+                        BorderRadius.all(Radius.elliptical(30,30))),
+                        child: _activeitemTwo(reversgaslist[index]));
 
 
            }
 
+
         )
+
       ),
     );
   }

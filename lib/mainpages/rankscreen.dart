@@ -117,9 +117,9 @@ class _rankscreenState extends State<rankscreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                      ranker(AssetImage('asset/img/me.jpg'),'gomsuman','컴퓨터 공학과',4,90,Colors.yellow,Colors.yellowAccent.shade400,Colors.yellowAccent.shade700),
-                      ranker(AssetImage('asset/img/me2.jpg'),'zeus','내거친생각과',3,68,Colors.grey,Colors.grey.shade200,Colors.grey.shade700,),
-                      ranker(AssetImage('asset/img/man.png'),'ok_su','불안한눈빛과',2,48,Colors.brown,Colors.brown.shade200,Colors.brown.shade700),
+                      ranker(AssetImage('asset/img/me.jpg'),'gomsuman','컴퓨터 공학과',4,90,Colors.yellow,Colors.yellow,Colors.yellow),
+                      ranker(AssetImage('asset/img/me2.jpg'),'zeus','내거친생각과',3,68,Colors.grey,Colors.grey,Colors.grey,),
+                      ranker(AssetImage('asset/img/man.png'),'ok_su','불안한눈빛과',2,48,Colors.brown,Colors.brown,Colors.brown),
 
 
 
