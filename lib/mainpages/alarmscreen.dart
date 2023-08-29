@@ -80,7 +80,7 @@ Widget _activeitemOne(String a) {
                 alignment: Alignment.topRight,
                 child: CircleAvatar(
 
-                  backgroundColor: Colors.cyan,
+                  backgroundColor: Colors.blue,
                   radius: 10,
                 ),
               ),
