@@ -164,6 +164,7 @@ class _alarmsscreenState extends State<alarmsscreen> {
               return
                     Card(
                       elevation: 1,
+
                         shape:  RoundedRectangleBorder(  borderRadius:
                         BorderRadius.all(Radius.elliptical(30,30))),
                         child: _activeitemTwo(reversgaslist[index]));
