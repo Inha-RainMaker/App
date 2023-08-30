@@ -52,7 +52,7 @@ Widget _activeitemOne(String a) {
                 ),
             ),
             children: [
-              TextSpan(text: ' 님이 보낸 RAInn',
+              TextSpan(text: ' 님이 보낸 RAInnn',
                 style: TextStyle(
                   fontWeight: FontWeight.normal,
                     ),
@@ -125,7 +125,7 @@ Widget _activeitemTwo(String a) {
 
 
 class _alarmsscreenState extends State<alarmsscreen> {
-  List<String> gaslist=['가장 무뭐뭫 한 사람','웃을때 가장 멋있는사람', '학교도서관에 살것 같은 사람'];
+  List<String> gaslist=['가장 무뭐뭫 한 사람','웃을때 가장 멋있는사람', '학교도서관에 살것 같은 사람','dd','dddd','ddddd','ddd'];
   late List<String> reversgaslist=gaslist.reversed.toList();
   @override
   Widget build(BuildContext context) {
