@@ -52,7 +52,7 @@ Widget _activeitemOne(String a) {
                 ),
             ),
             children: [
-              TextSpan(text: ' 님이 보낸 RAIN',
+              TextSpan(text: ' 님이 보낸 RAInn',
                 style: TextStyle(
                   fontWeight: FontWeight.normal,
                     ),
