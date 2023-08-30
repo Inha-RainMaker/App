@@ -91,9 +91,9 @@ Widget _activeitemOne(String a) {
 }
 
 Widget _activeitemTwo(String a) {
+
   return Container(
     decoration: BoxDecoration(
-
         borderRadius: BorderRadius.all(Radius.circular(10)),
         color: Colors.white,
         boxShadow: [
@@ -109,50 +109,12 @@ Widget _activeitemTwo(String a) {
       padding: const EdgeInsets.all(10),
 
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CircleAvatar(
-            backgroundImage: AssetImage('asset/img/raingirl.png'),
+            backgroundImage: AssetImage('asset/img/pinkrain.png'),
             backgroundColor: Colors.white,
             radius: 30,
-          ),
-          const SizedBox(
-            width: 10,
-          ),
-          Expanded(
-            child: Text.rich(
-                TextSpan(text: a,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    foreground: Paint()
-                      ..shader = LinearGradient(
-                          colors: <Color>[
-                            Colors.pink,
-                            Colors.pinkAccent,
-                            Colors.deepOrange,
-                          ]
-                      ).createShader(Rect.fromLTWH(0.0, 0.0, 200, 100),
-                      ),
-                  ),
-                  children: [
-                    TextSpan(text: ' 님이 보낸 RAIN',
-                      style: TextStyle(
-                        fontWeight: FontWeight.normal,
-                      ),
-                    ),
-
-                    TextSpan(
-                        text: '   6시간 전',
-                        style: TextStyle(
-                            fontWeight: FontWeight.normal,
-                            fontSize: 13,
-                            color: Colors.black54
-                        )
-                    )
-                  ],
-                )
-
-
-            ),
           ),
 
 
@@ -201,7 +163,7 @@ class _alarmsscreenState extends State<alarmsscreen> {
             itemBuilder:(context,index){
               return
                     Card(
-                      elevation: 5,
+                      elevation: 1,
                         shape:  RoundedRectangleBorder(  borderRadius:
                         BorderRadius.all(Radius.elliptical(30,30))),
                         child: _activeitemTwo(reversgaslist[index]));
