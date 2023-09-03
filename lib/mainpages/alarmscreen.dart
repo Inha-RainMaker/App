@@ -113,7 +113,7 @@ Widget _activeitemTwo(String a) {
         children: [
           CircleAvatar(
             backgroundImage: AssetImage('asset/img/pinkrain.png'),
-            backgroundColor: Colors.white,
+
             radius: 30,
           ),
 
